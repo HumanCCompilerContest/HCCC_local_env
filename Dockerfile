@@ -5,5 +5,5 @@ RUN git clone https://github.com/longld/peda.git ~/peda
 RUN echo "source ~/peda/peda.py" >> $HOME/.gdbinit
 RUN echo "PS1='\e[32m\u@\h \e[35m \e[34m\w\n\e[0m\$ '" >> $HOME/.bashrc
 RUN echo "alias asm2bin=\"f(){ \gcc \\\$1 -O0 -g -o tmp && ./tmp; }; f\"" >> $HOME/.bashrc
-RUN echo "alias gcc=\"echo gcc command is disabled. use asm2bin command.\n$ asem2bin <asm file>\"" >> $HOME/.bashrc
+RUN echo "alias gcc=\"echo -e \\\"gcc command is disabled. use asm2bin command.\\n$ asm2bin <asm file>\\\"\"" >> $HOME/.bashrc
 WORKDIR /root
